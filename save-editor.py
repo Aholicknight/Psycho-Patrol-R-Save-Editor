@@ -10,7 +10,6 @@ colorama.init()
 
 save_file_path = os.path.expandvars(r"%APPDATA%\Godot\app_userdata\Psycho Patrol R\newgame.save") # Default save file path
 
-
 def load_save_file():
     global save_file_path
     try:
@@ -111,8 +110,6 @@ def print_status(save_data):
     print("Current Levels Unlocked:", Fore.RED + str(levels_unlocked) + Style.RESET_ALL)
     print("Number of Weapons Unlocked:", Fore.RED + str(weapons_unlocked) + Style.RESET_ALL)
     print("Current Money:", Fore.GREEN + str(money) + Style.RESET_ALL)
-    print("Current Implants Unlocked:", Fore.RED + str(len(implants_unlocked)) + Style.RESET_ALL)
-    print("Current Difficulty:", Fore.RED + str(current_difficulty) + Style.RESET_ALL)
 
 def clear_console():
     command = 'cls' if os.name == 'nt' else 'clear'
@@ -124,13 +121,6 @@ def main():
         return
     
     global_data = get_global_data(save_data)
-    
-    difficulty_mapping = {
-        "soul": "Divine Light", # Default difficulty
-        "hell_discovered": "Flesh Automation", # Second easiest difficulty
-        "husk": "Power In Misery", # Easiest difficulty
-        "hope": "Hope Eradicated" # Secret hardest difficulty
-    }
 
     print_status(save_data)
     
@@ -139,12 +129,9 @@ def main():
         print("1) Edit levels unlocked")
         print("2) Unlock all weapons")
         print("3) Edit Money")
-        print("4) Edit Difficulty")
-        print("5) Change Life/Death Symbol")
-        print("6) Load/Backup Current Save File")
-        print("7) " + Fore.GREEN + "Unlock" + Style.RESET_ALL + " all implants")
-        print("8) " + Fore.RED + "Lock" + Style.RESET_ALL + " all implants")
-        print("9) Edit Stocks")
+        print("4) Load/Backup Current Save File")
+        print("5) " + Fore.GREEN + "Unlock" + Style.RESET_ALL + " all implants")
+        print("6) " + Fore.RED + "Lock" + Style.RESET_ALL + " all implants")
         print("10) Exit")
 
         choice = input("Enter your choice: ")
