@@ -5,6 +5,7 @@ Save editor for the game Psycho Patrol R
 This Python program edits the Psycho Patrol R save file located in `%APPDATA%\Godot\app_userdata\Psycho Patrol R`. The save editor has options to edit such as:
 
 * Edit money
+* Unlock all weapons
 * Load/Backup your save file
 
 
